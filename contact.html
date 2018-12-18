@@ -53,113 +53,119 @@
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
-    </nav>
-
-    <div id="wrapper">     
-    <h1>DEGUSTEZ UNE GLACE</h1>
-    <h2>TOUT DE SUITE</h2>
-    <p>
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Order-modal">
-  Commandez
-    </button>
-    </p>
-    </div>
-    <div class="modal fade" id="Order-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Laissez-vous tenter</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div id="wufoo-qu044tc0uyn8jy">Fill out my <a href="https://nicomotte.wufoo.com/forms/qu044tc0uyn8jy">online form</a>.
-      </div>
-      <div id="wuf-adv" style="font-family:inherit;font-size: small;color:#a7a7a7;text-align:center;display:block;">There are tons of <a href="http://www.wufoo.com/features/">Wufoo features</a> to help make your forms awesome.</div>
-      <script type="text/javascript">var qu044tc0uyn8jy;(function(d, t) {
-      var s = d.createElement(t), options = {
-      'userName':'nicomotte',
-      'formHash':'qu044tc0uyn8jy',
-      'autoResize':true,
-      'height':'540',
-      'async':true,
-      'host':'wufoo.com',
-      'header':'show',
-      'ssl':true};
-      s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
-      s.onload = s.onreadystatechange = function() {
-      var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-      try { qu044tc0uyn8jy = new WufooForm();qu044tc0uyn8jy.initialize(options);qu044tc0uyn8jy.display(); } catch (e) {}};
-      var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-      })(document, 'script');</script>
-
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-    
+    </nav> 
     <div class="vertical-spacer"></div>
-    <div class="container text-center">
-      <div class="row text-center">
-        <div class="col-sm-6 col-md-3 feature">
-          <img src="images/icon_57707/icon_57707.png" width="48">
-          <p>
-            Choisissez jusque trois parfums
-            parmi notre catalogue de <strong>1000</strong> glaces maison.
-          </p>
-        </div>
-        <div class="col-sm-6 col-md-3 feature">
-          <img src="images/icon_29388/icon_29388.png" width="48">
-          <p>
-            L'application vous <strong>géolocalise</strong> automatiquement et vous
-            indique le temps d'attente estimé.
-          </p>
-        </div>
-        <div class="col-sm-6 col-md-3 feature">
-          <img src="images/icon_24755/icon_24755.png" width="48">
-          <p>
-            Un de nos supers livreurs fonce pour vous apporter votre glace,
-            qui sera <strong>préparée juste à temps</strong>.
-          </p>
-        </div>
-        <div class="col-sm-6 col-md-3 feature">
-          <img src="images/icon_17805/icon_17805.png" width="48">
-          <p>
-            Pas de monnaie ? Pas un problème, le paiement est <strong>automatiquement</strong>
-            débité sur votre carte bancaire.
-          </p>
-        </div>
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-6">
+
+<div id="map" style="width: 100%; height: 400px;"></div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+<script type="text/javascript">
+  var myLatlng = new google.maps.LatLng(48.886154, 2.324220);
+
+  var myOptions = {
+      zoom: 14,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#46bcec"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+]
+  };
+
+  var map = new google.maps.Map(document.getElementById('map'), myOptions);
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title:"You are here!"
+  });
+</script>
+      </div>
+      <div class="col-sm-6">
+        <h2>Contact</h2>
+        <p><i class="fa fa-map-marker"></i> 17 rue Lemercier <br><i class="fa fa-mobile-phone"></i> 06 00 00 00 00</p>
+      </div>
       </div>
     </div>
-    <div class="vertical-spacer"></div>
-      <div class="container text-center">
-        <h2>INSCRIVEZ-VOUS ICI</h2>
-        <div class="row">
-        <div class="col-xs-12 text-center">
-          <!-- Begin Mailchimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-<div id="mc_embed_signup">
-<form action="https://facebook.us7.list-manage.com/subscribe/post?u=881cc8cd459d77c40241f0820&amp;id=b0925e9ebc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-inline" target="_blank" novalidate>
-  
-  
-  <input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" placeholder="email address" required>
-  <input type="submit" value="Inscrivez-vous" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-
-    
-</form>
-    </div> 
-
-<!--End mc_embed_signup-->
-
-        </div> 
-        </div>  
-    </div>  
     <div class="vertical-spacer"></div>
     <div id="footer">
     <div class="container">
